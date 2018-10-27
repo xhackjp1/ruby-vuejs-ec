@@ -6,6 +6,25 @@ function buildUrl(url) {
   return NYTBaseUrl + url + ".json?api-key=" + ApiKey
 }
 
+Vue.component('item-list', {
+  props: ['items'],
+  template: `
+    <section>
+      <div class="columns large-3 medium-6" v-for="item in items">
+        <div class="card">
+          <div class="card-divider">
+            {{ item.title }}
+          </div>
+          <a :href="post.url" target="_blank"><img :src="item.image_url"></a>
+          <div class="card-section">
+            <p>{{ item.price }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
+});
+
 Vue.component('news-list', {
   props: ['results'],
   template: `
@@ -50,6 +69,11 @@ const vm = new Vue({
   el: '#app',
   data: {
     results: [],
+    items: [
+      {"title": "", price: 2000, "image_url": "sample.png"},
+      {"title": "", price: 2400, "image_url": "sample.png"},
+      {"title": "", price: 2600, "image_url": "sample.png"},
+    ],
     sections: SECTIONS.split(', '), // create an array of the sections
     section: 'home', // set default section to 'home'
     loading: true,

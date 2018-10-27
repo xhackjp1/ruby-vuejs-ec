@@ -3,18 +3,17 @@
 
 <head>
   <meta charset="utf-8">
-  <title>The greatest news app ever</title>
+  <title>X-HACK TシャツSHOP</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
-
 </head>
 
 <body>
 
   <div class="container" id="app">
-    <h3 class="text-center">VueNews</h3>
+    <h3 class="text-center">X-HACK TシャツSHOP</h3>
 
     <section class="callout secondary">
-      <h5 class="text-center">Filter by Category</h5>
+      <h5 class="text-center">Filter by Color</h5>
       <form>
         <div class="row">
           <div class="large-6 columns">
@@ -33,7 +32,8 @@
     <div v-if="loading" class="loader">
       <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="loader">
     </div>
-
+    
+    <item-list v-if="!loading" :items="items"></news-list>
     <news-list v-if="!loading" :results="results"></news-list>
   </div>
 
