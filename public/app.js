@@ -72,9 +72,15 @@ const vm = new Vue({
   data: {
     results: [],
     items: [
-      {title: "タイトル1", price: 2000, url: "", image_url: "sample1.png"},
-      {title: "タイトル2", price: 2400, url: "", image_url: "sample2.png"},
-      {title: "タイトル3", price: 2600, url: "", image_url: "sample3.png"},
+      {title: "タイトル1", price: 2000, url: "", image_url: "./images/sample1.png"},
+      {title: "タイトル2", price: 2400, url: "", image_url: "./images/sample2.png"},
+      {title: "タイトル3", price: 2600, url: "", image_url: "./images/sample3.png"},
+      {title: "タイトル4", price: 2000, url: "", image_url: "./images/sample1.png"},
+      {title: "タイトル5", price: 2400, url: "", image_url: "./images/sample2.png"},
+      {title: "タイトル6", price: 2600, url: "", image_url: "./images/sample3.png"},
+      {title: "タイトル7", price: 2000, url: "", image_url: "./images/sample1.png"},
+      {title: "タイトル8", price: 2400, url: "", image_url: "./images/sample2.png"},
+      {title: "タイトル9", price: 2600, url: "", image_url: "./images/sample3.png"},
     ],
     sections: SECTIONS.split(', '), // create an array of the sections
     section: 'home', // set default section to 'home'
