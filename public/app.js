@@ -1,4 +1,5 @@
 const SECTIONS = "all, white, red, blue, grees, pink";
+const SIZELIST = "XS, S, M, L, LL, 3L"
 
 Vue.component('item-list', {
   props: ['items'],
@@ -13,6 +14,11 @@ Vue.component('item-list', {
             <a :href="item.url" target="_blank"><img :src="item.image_url"></a>
             <div class="card-section">
               <p>{{ item.price }}</p>
+            </div>
+            <div class="card-section">
+              <select v-model="section">
+                <option v-for="size in sizelist" :value="size">{{ size }}</option>
+              </select>
             </div>
           </div>
         </div>
@@ -36,6 +42,7 @@ const vm = new Vue({
       {title: "タイトル9", price: 2600, url: "", image_url: "./images/sample9.png"},
     ],
     sections: SECTIONS.split(', '), // create an array of the sections
+    sizelist: SIZELIST.split(', '), // create an array of the sections
     section: 'white', // set default section to 'home'
     loading: true,
     title: ''
