@@ -14,11 +14,10 @@ Vue.component('item-list', {
             <a :href="item.url" target="_blank"><img :src="item.image_url"></a>
             <div class="card-section">
               <p>{{ item.price }}</p>
-            </div>
-            <div class="card-section">
               <select v-model="size">
                 <option v-for="size in item.present_stock_size" :value="size">{{ size }}</option>
               </select>
+              <a href="item" class="button">Add To Cart</a>
             </div>
           </div>
         </div>
