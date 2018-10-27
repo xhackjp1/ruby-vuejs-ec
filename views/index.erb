@@ -34,18 +34,6 @@
     </div>
 
     <item-list v-if="!loading" :items="items"></news-list>
-    <!-- <div class="columns medium-3" v-for="item in items">
-      <div class="card">
-        <div class="card-divider">
-          {{ item.title }}
-        </div>
-        <div class="card-section">
-          <p>{{ item.price }}.</p>
-        </div>
-      </div>
-    </div> -->
-
-    <news-list v-if="!loading" :results="results"></news-list>
   </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
