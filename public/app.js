@@ -10,14 +10,16 @@ Vue.component('item-list', {
   props: ['items'],
   template: `
     <section>
-      <div class="columns large-3 medium-6" v-for="item in items">
-        <div class="card">
-          <div class="card-divider">
-            {{ item.title }}
-          </div>
-          <a :href="post.url" target="_blank"><img :src="item.image_url"></a>
-          <div class="card-section">
-            <p>{{ item.price }}</p>
+      <div class="row">
+        <div class="columns large-3 medium-6" v-for="item in items">
+          <div class="card">
+            <div class="card-divider">
+              {{ item.title }}
+            </div>
+            <a :href="item.url" target="_blank"><img :src="item.image_url"></a>
+            <div class="card-section">
+              <p>{{ item.price }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -70,9 +72,9 @@ const vm = new Vue({
   data: {
     results: [],
     items: [
-      {title: "タイトル1", price: 2000, image_url: "sample1.png"},
-      {title: "タイトル2", price: 2400, image_url: "sample2.png"},
-      {title: "タイトル3", price: 2600, image_url: "sample3.png"},
+      {title: "タイトル1", price: 2000, url: "", image_url: "sample1.png"},
+      {title: "タイトル2", price: 2400, url: "", image_url: "sample2.png"},
+      {title: "タイトル3", price: 2600, url: "", image_url: "sample3.png"},
     ],
     sections: SECTIONS.split(', '), // create an array of the sections
     section: 'home', // set default section to 'home'
