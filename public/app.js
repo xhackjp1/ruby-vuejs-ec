@@ -17,7 +17,7 @@ Vue.component('item-list', {
             </div>
             <div class="card-section">
               <select v-model="size">
-                <option v-for="size in sizelist" :value="size">{{ size }}</option>
+                <option v-for="size in item.present_stock_size" :value="size">{{ size }}</option>
               </select>
             </div>
           </div>
@@ -31,15 +31,15 @@ const vm = new Vue({
   el: '#app',
   data: {
     items: [
-      {title: "タイトル1", price: 2000, url: "", image_url: "./images/sample1.png"},
-      {title: "タイトル2", price: 2400, url: "", image_url: "./images/sample2.png"},
-      {title: "タイトル3", price: 2600, url: "", image_url: "./images/sample3.png"},
-      {title: "タイトル4", price: 2000, url: "", image_url: "./images/sample4.png"},
-      {title: "タイトル5", price: 2400, url: "", image_url: "./images/sample5.png"},
-      {title: "タイトル6", price: 2600, url: "", image_url: "./images/sample6.png"},
-      {title: "タイトル7", price: 2000, url: "", image_url: "./images/sample7.png"},
-      {title: "タイトル8", price: 2400, url: "", image_url: "./images/sample8.png"},
-      {title: "タイトル9", price: 2600, url: "", image_url: "./images/sample9.png"},
+      {title: "タイトル1", price: 2000, url: "", image_url: "./images/sample1.png", present_stock_size: ["S", "M"]},
+      {title: "タイトル2", price: 2400, url: "", image_url: "./images/sample2.png", present_stock_size: ["S", "L"]},
+      {title: "タイトル3", price: 2600, url: "", image_url: "./images/sample3.png", present_stock_size: ["S",]},
+      {title: "タイトル4", price: 2000, url: "", image_url: "./images/sample4.png", present_stock_size: ["M"]},
+      {title: "タイトル5", price: 2400, url: "", image_url: "./images/sample5.png", present_stock_size: ["M"]},
+      {title: "タイトル6", price: 2600, url: "", image_url: "./images/sample6.png", present_stock_size: ["S", "M", "L"]},
+      {title: "タイトル7", price: 2000, url: "", image_url: "./images/sample7.png", present_stock_size: ["S", "M"]},
+      {title: "タイトル8", price: 2400, url: "", image_url: "./images/sample8.png", present_stock_size: ["S"]},
+      {title: "タイトル9", price: 2600, url: "", image_url: "./images/sample9.png", present_stock_size: ["L", "LL", "3L"]},
     ],
     sections: SECTIONS.split(', '), // create an array of the sections
     sizelist: SIZELIST.split(', '), // create an array of the sections
