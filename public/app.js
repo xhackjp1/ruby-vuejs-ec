@@ -16,7 +16,7 @@ Vue.component('item-list', {
               <p>{{ item.price }}</p>
             </div>
             <div class="card-section">
-              <select v-model="section">
+              <select v-model="size">
                 <option v-for="size in sizelist" :value="size">{{ size }}</option>
               </select>
             </div>
@@ -44,6 +44,7 @@ const vm = new Vue({
     sections: SECTIONS.split(', '), // create an array of the sections
     sizelist: SIZELIST.split(', '), // create an array of the sections
     section: 'white', // set default section to 'home'
+    size: 'M',
     loading: true,
     title: ''
   },
