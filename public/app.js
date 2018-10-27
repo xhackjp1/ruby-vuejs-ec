@@ -1,4 +1,4 @@
-const SECTIONS = "white, red, blue, grees, pink";
+const SECTIONS = "all, white, red, blue, grees, pink";
 
 Vue.component('item-list', {
   props: ['items'],
@@ -41,11 +41,12 @@ const vm = new Vue({
     title: ''
   },
   mounted() {
-    //this.getPosts('home');
+    this.getItems('all');
   },
   methods: {
     getItems(section) {
-      //
+      console.log("---アイテム取得---");
+      this.loading = false;
     }
   },
 });
