@@ -45,6 +45,7 @@ const vm = new Vue({
   },
   methods: {
     getItems(section) {
+      //
     }
-  }
+  },
 });
