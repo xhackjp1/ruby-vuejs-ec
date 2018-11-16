@@ -5,6 +5,10 @@ get '/' do
   erb :index
 end
 
+get '/index' do
+  erb :index
+end
+
 get '/about' do
   erb :about
 end
@@ -19,10 +23,6 @@ end
 
 get '/shop' do
   erb :shop
-end
-
-get '/shop-single' do
-  erb :shop-single
 end
 
 get '/contact' do
