@@ -36,3 +36,27 @@ end
 get '/thankyou' do
   erb :thankyou
 end
+
+get '/api/itemList' do
+  article = {
+    id: 1,
+    title: "today's dialy",
+    content: "It's a sunny day.",
+    items: [
+      {
+        image_url: "images/women.jpg",
+        categoryName: "Women"
+      },
+      {
+        image_url: "images/children.jpg",
+        categoryName: "Children"
+      },
+      {
+        image_url: "images/men.jpg",
+        categoryName: "Men"
+      },
+    ]
+  }
+
+  article.to_json
+end
