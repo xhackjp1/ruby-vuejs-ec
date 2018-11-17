@@ -183,12 +183,12 @@ new Vue({
     message: "hello everyone!!",
   },
   mounted() {
-    axios.get("http://localhost:4567/api/categoryList")
+    axios.get("https://xhack-shop.herokuapp.com/api/categoryList")
       .then(response => {
         console.log(response.data.categories);
         this.categories = response.data.categories
       });
-    axios.get("http://localhost:4567/api/itemList")
+    axios.get("https://xhack-shop.herokuapp.com/api/itemList")
       .then(response => {
         console.log(response.data.items);
         this.items = response.data.items
