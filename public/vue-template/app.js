@@ -178,27 +178,20 @@ Vue.component('main-footer', {
 new Vue({
   el: '#app',
   data: {
-    items: [{
-      name: "item1",
-      price: "2000",
-      image_url: "women",
-    }, {
-      name: "item1",
-      price: "2000",
-      image_url: "women",
-    }, {
-      name: "item1",
-      price: "2000",
-      image_url: "women",
-    }],
-    results: [],
+    items: [],
+    categories: [],
     message: "hello everyone!!",
   },
   mounted() {
+    axios.get("http://localhost:4567/api/categoryList")
+      .then(response => {
+        console.log(response.data.categories);
+        this.categories = response.data.categories
+      });
     axios.get("http://localhost:4567/api/itemList")
       .then(response => {
         console.log(response.data.items);
-        this.results = response.data.items
+        this.items = response.data.items
       });
   }
 })
