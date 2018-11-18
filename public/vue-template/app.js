@@ -223,11 +223,41 @@ Vue.component('category-template', {
   `
 })
 
+Vue.component('site-info', {
+  props: ['informationProps'],
+  template: `
+  <div class="row">
+    <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="" v-for="info in informationProps">
+      <div class="icon mr-4 align-self-start">
+        <span :class="info.icon"></span>
+      </div>
+      <div class="text">
+        <h2 class="text-uppercase">{{ info.text }}</h2>
+        <p>{{ info.description }} </p>
+      </div>
+    </div>
+  </div>
+  `
+})
+
 new Vue({
   el: '#app',
   data: {
     items: [],
     categories: [],
+    informations: [{
+      icon: "icon-truck",
+      text: "Free Shipping",
+      description: "description",
+    },{
+      icon: "icon-refresh2",
+      text: "Free Returns",
+      description: "description",
+    },{
+      icon: "icon-help",
+      text: "Customer Support",
+      description: "description",
+    }],
     message: "hello everyone!!",
   },
   mounted() {
