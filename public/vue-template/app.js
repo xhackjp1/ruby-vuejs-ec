@@ -195,6 +195,34 @@ Vue.component('item-template', {
   `
 })
 
+Vue.component('category-template', {
+  props: ['categoryProps'],
+  template: `
+  <div class="col-md-12">
+    <div class="site-section site-blocks-2">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-7 site-section-heading pt-4">
+            <h2>Categories</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="" v-for="category in categoryProps">
+            <a class="block-2-item" href="#">
+              <figure class="image">
+                <img :src="category.image_url" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <span class="text-uppercase">Collections</span>
+                <h3>{{ category.categoryName }}</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>
+  `
+})
+
 new Vue({
   el: '#app',
   data: {

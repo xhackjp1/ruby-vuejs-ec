@@ -69,25 +69,13 @@
 
     <div class="site-section site-blocks-2">
       <div class="container">
-
         <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="" v-for="category in categories">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img :src="category.image_url" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">Collections</span>
-                <h3>{{ category.categoryName }}</h3>
-              </div>
-            </a>
-          </div>
+          <category-template :category-props='categories'></category-template>
         </div>
       </div>
     </div>
 
     <!-- <big-sale></big-sale> -->
-
     <main-footer></main-footer>
 
   </div>
