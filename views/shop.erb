@@ -42,23 +42,7 @@
 
         <div class="row mb-5">
           <div class="col-md-12 order-2">
-
-            <div class="row mb-5">
-
-              <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" v-for="item in items">
-                <div class="block-4 text-center border">
-                  <figure class="block-4-image">
-                    <a href="item"><img :src="item.image_url" alt="Image placeholder" class="img-fluid"></a>
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="item">Tank Top</a></h3>
-                    <p class="mb-0">Finding perfect t-shirt</p>
-                    <p class="text-primary font-weight-bold">{{ item.price }}</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+            <item-template :items-props='items'></item-template>
           </div>
 
         </div>
