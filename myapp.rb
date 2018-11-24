@@ -1,6 +1,11 @@
 # myapp.rb
 require 'sinatra'
 
+ActiveRecord::Base.establish_connection(
+  adapter: 'sqlite3',
+  database: 'db/sqlite3.db'
+)
+
 get '/' do
   erb :index
 end

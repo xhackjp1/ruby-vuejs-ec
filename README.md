@@ -24,4 +24,5 @@ $ cd ruby-vuejs-ec
 $ gem install bundler
 $ bundle install
 $ ruby myapp.rb
+http://localhost:4567/ にアクセス
 ```
