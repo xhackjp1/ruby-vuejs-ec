@@ -105,4 +105,10 @@ get '/api/itemList' do
 
   # items.to_json
   Item.all.to_json
+
+  # items = Item.all
+  # items.all.each do |item|
+  #   item['price'] = Price.find(item.price_id)
+  # end
+  # items.to_json
 end
