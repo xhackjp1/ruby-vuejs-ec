@@ -268,8 +268,8 @@ new Vue({
       });
     axios.get("http://localhost:4567/api/itemList")
       .then(response => {
-        console.log(response.data.items);
-        this.items = response.data.items
+        console.log(response.data);
+        this.items = response.data
       });
   }
 })

@@ -1,10 +1,7 @@
 # myapp.rb
 require 'sinatra'
-
-ActiveRecord::Base.establish_connection(
-  adapter: 'sqlite3',
-  database: 'db/sqlite3.db'
-)
+require "sinatra/activerecord"
+require './models/item.rb'
 
 get '/' do
   erb :index
@@ -106,5 +103,6 @@ get '/api/itemList' do
     ]
   }
 
-  items.to_json
+  # items.to_json
+  Item.all.to_json
 end
