@@ -29,8 +29,7 @@
           <article>
             <label>1000円のお支払い</label>
           </article>
-          <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="<%= settings.public_key %>"></script>
-
+          <script class="payjp-button" data-key="<%= settings.public_key %>"></script>
         </form>
       </div>
     </div>
@@ -43,5 +42,6 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://checkout.pay.jp"></script>
   </body>
 </html>
